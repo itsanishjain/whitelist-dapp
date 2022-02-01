@@ -36,3 +36,7 @@ if not change the network by running
 `truffle migrate`
 
 ## React App
+
+yarn install
+
+yarn run dev
