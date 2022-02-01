@@ -4,7 +4,6 @@ import Web3Modal from "web3modal";
 import { providers, Contract } from "ethers";
 import { useEffect, useRef, useState } from "react";
 import { WHITELIST_CONTRACT_ADDRESS } from "../constants";
-
 const abi = require("../Whitelist.json").abi;
 
 export default function Home() {
@@ -153,15 +152,13 @@ export default function Home() {
     if (walletConnected) {
       if (joinedWhitelist) {
         return (
-          <div className={styles.description}>
-            Thanks for joining the Whitelist!
-          </div>
+          <div className="btn-grad">Thanks for joining the Whitelist!</div>
         );
       } else if (loading) {
         return <button className={styles.button}>Loading...</button>;
       } else {
         return (
-          <button onClick={addAddressToWhitelist} className={styles.button}>
+          <button onClick={addAddressToWhitelist} className="btn-grad">
             Join the Whitelist
           </button>
         );
@@ -199,20 +196,28 @@ export default function Home() {
         <meta name="description" content="Whitelist-Dapp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.main}>
+      <div className="App">
         <div>
-          <h1 className={styles.title}>Welcome to WEB3 Rocks</h1>
-          <div className={styles.description}>
+          <h1 className="grad-text">Welcome To WEB3 Rocks</h1>
+          <div
+            style={{
+              fontSize: "1.5rem",
+              color: "white",
+              paddingTop: "20px",
+              paddingBottom: "20px",
+              marginTop: "20px",
+            }}
+          >
             Its an NFT collection for developers in Crypto.
-          </div>
-          <div className={styles.description}>
+            <br />
             {numberOfWhitelisted} have already joined the Whitelist
           </div>
+
           {renderButton()}
         </div>
-        <div>
+        {/* <div>
           <img className={styles.image} src="./crypto-devs.svg" />
-        </div>
+        </div> */}
       </div>
 
       <footer className={styles.footer}>
