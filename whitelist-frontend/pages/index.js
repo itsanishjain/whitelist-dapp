@@ -5,12 +5,8 @@ import { providers, Contract } from "ethers";
 import { useEffect, useRef, useState } from "react";
 import { WHITELIST_CONTRACT_ADDRESS } from "../constants";
 
-const abi =
-  require("../../whitelist-dapp-contracts/build/contracts/Whitelist.json").abi;
-
-
+const abi = require("../Whitelist.json").abi;
 console.log(abi,"DASDAS")
-
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
